@@ -31,25 +31,39 @@ class BlockChain(object):
         sorted_block = json.dumps(block, sort_keys=True)
         return hashlib.sha256(sorted_block.encode()).hexdigest()
 
-
-def myprint(chains):
+def pprint(chains):
     for i, chain in enumerate(chains):
-        # イコールを25個連続出力
-        print(f'{"=" * 25} Chain {i} {"=" * 25}')
-        # keyとvalueを出力
+        print(f'{"="*25} Chain {i} {"="*25}')
         for k, v in chain.items():
             print(f'{k:15}{v}')
-    print(f'{"*" * 25}')
-
+    print(f'{"*"*25}')
 
 if __name__ == '__main__':
     block_chain = BlockChain()
-    myprint(block_chain.chain)
+    pprint(block_chain.chain)
 
     previous_hash = block_chain.hash(block_chain.chain[-1])
     block_chain.create_block(5, previous_hash)
-    myprint(block_chain.chain)
+    pprint(block_chain.chain)
 
     previous_hash = block_chain.hash(block_chain.chain[-1])
-    block_chain.create_block(3, previous_hash)
-    myprint(block_chain.chain)
+    block_chain.create_block(2, previous_hash)
+    pprint(block_chain.chain)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
