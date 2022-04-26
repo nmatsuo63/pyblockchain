@@ -2,13 +2,15 @@ import logging
 import sys
 import time
 
-
 logging.basicConfig(level=logging.INFO, stream=sys.stdout)
 
 
 class BlockChain(object):
 
-    def __init__(self):
+    # def __init__(self):
+    #     self.transaction_pool = None
+    #
+    def __int__(self):
         self.transaction_pool = []
         self.chain = []
         self.create_block(0, 'init hash')
@@ -24,19 +26,9 @@ class BlockChain(object):
         self.transaction_pool = []
         return block
 
-# def pprint(chains):
-#     for i, chain in enumerate(chains):
-#         print(f'{"="*25} Chain {i} {"="*25}')
-#         for k, v in chain.items():
-#             print(f'{k:15}{v}')
-#     print(f'{"*"*25}')
-
 
 if __name__ == '__main__':
     block_chain = BlockChain()
     print(block_chain.chain)
-    # pprint(block_chain.chain)
-    block_chain.create_block(2, 'hash 2')
-    # pprint(block_chain.chain)
-    block_chain.create_block(5, 'hash 1')
-    # pprint(block_chain.chain)
+    # block_chain.create_block(5, 'hash 1')
+    # print(block_chain.chain)
