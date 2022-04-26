@@ -24,7 +24,7 @@ class BlockChain(object):
         return block
 
 
-def pprint(chains):
+def myprint(chains):
     for i, chain in enumerate(chains):
         # イコールを25個連続出力
         print(f'{"=" * 25} Chain {i} {"=" * 25}')
@@ -36,8 +36,8 @@ def pprint(chains):
 
 if __name__ == '__main__':
     block_chain = BlockChain()
-    pprint(block_chain.chain)
+    myprint(block_chain.chain)
     block_chain.create_block(5, 'hash 1')
-    pprint(block_chain.chain)
+    myprint(block_chain.chain)
     block_chain.create_block(3, 'hash 2')
-    pprint(block_chain.chain)
+    myprint(block_chain.chain)
